@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const Container = styled.div`
-  padding: 0 20px;
-`;
+const Container = styled.div``;
 
 const Heading = styled.h1`
   text-align: center;
-  margin: 80px 0 30px 0;
+  margin: 120px 0 40px 0;
   font-size: 60px;
   font-weight: 900;
 `;
@@ -18,66 +17,38 @@ const Description = styled.div`
   margin-bottom: 80px;
 `;
 
-const Form = styled.form`
+const ButtonContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(100, 100, 100, 0.1),
-    0 6px 20px 0 rgba(100, 100, 100, 0.1);
+  justify-content: center;
 `;
 
-const Title = styled.div`
-  text-align: center;
-  margin: 30px 0;
-`;
-
-const Label = styled.label``;
-
-const Input = styled.input`
-  margin-bottom: 30px;
-  background-color: #e6e5e5;
+const Button = styled(Link)`
   border: none;
-  padding: 10px;
-  border-radius: 5px;
-
-  &:focus {
-    outline: none;
-  }
-`;
-
-const Button = styled.button`
-  background-color: black;
+  padding: 18px 24px;
+  text-decoration: none;
   color: white;
-  outline: none;
-  border: none;
-  border: none;
-  padding: 10px;
+  background-color: black;
   border-radius: 5px;
+  margin: auto;
+
+  &:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
 `;
 
 const Home = () => {
   return (
     <Container>
-      <Heading>Cover letters made easy</Heading>
+      <Heading>Cover letters made easy.</Heading>
       <Description>
         Provide a few basic details and get a cover letter to help land your
         next job.
       </Description>
-      <Form action=''>
-        <Title>New Cover Letter</Title>
-        <Label htmlFor=''>What company are you applying for?</Label>
-        <Input type='text' />
-        <Label htmlFor=''>What is your current role?</Label>
-        <Input type='text' />
-        <Label htmlFor=''>
-          How many years of experience do you have in the industry?
-        </Label>
-        <Input type='text' />
-        <Button>Submit</Button>
-      </Form>
+      <ButtonContainer>
+        <Button to='/create'>Get started</Button>
+      </ButtonContainer>
     </Container>
   );
 };

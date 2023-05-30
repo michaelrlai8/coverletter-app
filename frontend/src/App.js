@@ -1,5 +1,6 @@
 import { Routes, Route, Link, NavLink } from 'react-router-dom';
 import Home from './Components/Home';
+import Create from './Components/Create';
 import About from './Components/About';
 import styled from 'styled-components';
 
@@ -8,6 +9,8 @@ const Nav = styled.nav`
   color: #989898;
   height: 60px;
   border-bottom: 1px solid lightgrey;
+  position: sticky;
+  top: 0;
 `;
 
 const Container = styled.div`
@@ -57,6 +60,10 @@ const StyledLink = styled(NavLink)`
   }
 `;
 
+const RoutesContainer = styled.div`
+  padding: 20px;
+`;
+
 const App = () => {
   return (
     <div>
@@ -68,16 +75,22 @@ const App = () => {
               <StyledLink to='/'>Home</StyledLink>
             </ListItem>
             <ListItem>
+              <StyledLink to='/create'>Create</StyledLink>
+            </ListItem>
+            <ListItem>
               <StyledLink to='/about'>About</StyledLink>
             </ListItem>
           </List>
         </Container>
       </Nav>
 
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-      </Routes>
+      <RoutesContainer>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/create' element={<Create />} />
+          <Route path='/about' element={<About />} />
+        </Routes>
+      </RoutesContainer>
     </div>
   );
 };
