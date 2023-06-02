@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './Button';
+import Button from '../components/Button';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -9,8 +9,7 @@ const Home = () => {
         Cover letters made easy.
       </h1>
       <div className='mb-20 text-center text-gray-600'>
-        Provide a few basic details and get a cover letter to help land your
-        next job.
+        Write a cover letter to land your dream job.
       </div>
       <div className='flex justify-center'>
         <Link to='/create'>

@@ -3,7 +3,7 @@ import Button from './Button';
 import { Link, NavLink } from 'react-router-dom';
 
 const linkStyle = 'text-gray-600 decoration-0 hover:text-black';
-const activeStyle = ({ isActive }) => (isActive ? 'text-blue-700' : '');
+const activeStyle = ({ isActive }) => (isActive ? 'text-blue-600' : '');
 
 const NavBar = () => {
   return (
@@ -33,7 +33,7 @@ const NavBar = () => {
           </li>
           <li>
             <Link>
-              <Button to='/about'>Login</Button>
+              <Button>Login</Button>
             </Link>
           </li>
         </ul>
